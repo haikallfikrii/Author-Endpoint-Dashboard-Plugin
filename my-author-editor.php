@@ -432,7 +432,8 @@ function my_author_editor_shortcode() {
             </div>
             <nav class="space-y-0.5">
                 <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Website Content Editor</h2>
-                <a class="flex items-center gap-2 hover:bg-gray-50 rounded-none px-2 py-1 text-gray-700 text-[11px]" href="https://caastedu.com/author-endpoint/"><i class="fas fa-user text-gray-500"></i> Author Endpoint Page</a>
+                <a class="flex items-center gap-2 hover:bg-gray-50 rounded-none px-2 py-1 text-gray-700 text-[11px]" href="https://caastedu.com/author-endpoint-v2/"><i class="fas fa-user text-gray-500"></i> Author Endpoint Page</a>
+                <a class="flex items-center gap-2 justify-between hover:bg-gray-50 rounded-none px-2 py-1 text-gray-700 text-[11px]" href="https://caastedu.com/article-endpoint/"><span><i class="fas fa-file-alt text-gray-500"></i> Article Endpoint Page</span><i class="fas fa-chevron-right text-[9px] text-gray-500"></i></a>
                 <a class="flex items-center gap-2 hover:bg-gray-50 rounded-none px-2 py-1 text-gray-700 text-[11px]" href="https://caastedu.com/book-endpoint/"><i class="fas fa-book-open text-gray-500"></i> Book Endpoint Page</a>
                 <a class="flex items-center gap-2 justify-between hover:bg-gray-50 rounded-none px-2 py-1 text-gray-700 text-[11px]" href="https://caastedu.com/video-endpoint/"><span><i class="fab fa-youtube text-gray-500"></i> Video Endpoint Page</span><i class="fas fa-chevron-right text-[9px] text-gray-500"></i></a>
                 <div><br/></div>
@@ -536,8 +537,21 @@ function my_author_editor_shortcode() {
                         ) );
                         ?>
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-4">
+                    
+                    <div class="grid md:grid-cols-3 justify-start gap-2 mt-2">
+                        <label for="submit_author_action_select" class="block text-sm font-medium text-gray-700 sr-only">Choose Action:</label>
+                        <select name="submit_author_action" id="submit_author_action_select" class="col-span-2 px-6 py-2 border border-gray-300 rounded-none shadow-sm text-sm font-medium text-gray-700 hover: focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <option value="save">Save Draft</option>
+                            <option value="publish">Publish</option>
+                            <option value="unpublish">Unpublish</option>
+                            <option value="archive">Archive</option>
+                            <option value="delete">Delete</option>
+                        </select>
+                        <button class="px-6 py-2 border border-gray-300 rounded-none shadow-sm text-sm font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" type="submit" id="main-submit-btn">Submit</button>
+                    </div>
+                    
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4">
                         <div class="flex flex-col">
                             <label for="footer_position" class="block text-sm font-medium text-gray-700">Footer Position:</label>
                             <select name="footer_position" id="footer_position" class="mt-1 block w-full border border-gray-300 rounded-none shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -560,45 +574,11 @@ function my_author_editor_shortcode() {
                     </div>
 
 
-                    <div class="grid md:grid-cols-3 justify-start gap-2 mt-6">
-                        <label for="submit_author_action_select" class="block text-sm font-medium text-gray-700 sr-only">Choose Action:</label>
-                        <select name="submit_author_action" id="submit_author_action_select" class="col-span-2 px-6 py-2 border border-gray-300 rounded-none shadow-sm text-sm font-medium text-gray-700 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            <option value="save">Save Draft</option>
-                            <option value="publish">Publish</option>
-                            <option value="unpublish">Unpublish</option>
-                            <option value="archive">Archive</option>
-                            <option value="delete">Delete</option>
-                        </select>
-                        <button class="px-6 py-2 border border-gray-300 rounded-none shadow-sm text-sm font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" type="submit" id="main-submit-btn">Submit</button>
-                    </div>
                 </form>
             </div>
         </section>
 
-        <aside aria-label="Right side content preview panel" class="w-full md:w-48 border border-gray-300 rounded-none p-3 text-xs text-gray-700 font-sans bg-white flex-shrink-0 min-h-[118vh] overflow-y-auto hide-scrollbar">
-            <nav class="flex gap-3 border border-gray-300 rounded-none px-2 py-1 mb-1 text-[9px] font-bold bg-gray-100">
-                <a class="hover:underline text-black" href="#">Home</a>
-                <a class="hover:underline text-black" href="#">Books</a>
-                <a class="hover:underline text-black" href="#">Videos</a>
-                <a class="hover:underline text-black bg-yellow-100 px-1" href="#">Author</a>
-            </nav>
-            <img alt="Small banner ad placeholder 300x30" class="mb-1 w-full rounded-none" height="30" src="https://via.placeholder.com/300x30/d3d3d3?text=The+Top+Ad+Banner" />
-            <div class="border border-gray-300 rounded-none p-1 text-[9px] font-bold text-center">
-                Author Name
-                <div class="font-normal text-[7px]">Author subtitle text</div>
-            </div>
-            <img alt="Author Photo" class="mb-1 w-full rounded-none" src="https://via.placeholder.com/300x150/d3d3d3?text=Photo" />
-            <div class="border border-gray-300 rounded-none p-1 text-[7px] font-bold text-center">
-                Body Content
-                <div class="font-normal text-[6px]">0000 0000 0000</div>
-            </div>
-            <div class="grid grid-cols-3 gap-1 border border-gray-300 rounded-none p-1 text-[7px] font-bold text-red-600 text-center bg-gray-100">
-                <?php for ($i = 1; $i <= 12; $i++): ?>
-                    <div class="border border-gray-300 p-1 rounded-none bg-white">Featured_<?php echo $i; ?></div>
-                <?php endfor; ?>
-            </div>
-            <img alt="Gravity Ad" class="mb-1 w-full rounded-none" src="https://via.placeholder.com/300x50/d3d3d3?text=GRAVITY" />
-        </aside>
+
     </main>
     <?php
     return ob_get_clean();
